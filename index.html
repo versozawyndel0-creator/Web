@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wyndel Viojan | Shod of Firebird</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #eee;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --gold: #d9a441;
+    --lightgold: #f4d18a;
+    --dark: #080808;
+    --gray: #aaa;
+}
+
+/* NAVIGATION */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(8,8,8,.96);
+    border-bottom: 1px solid #49371d;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 12px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 130px 20px 80px;
+    background:
+    radial-gradient(ellipse at center, #292012 0%, #101010 45%, #080808 80%);
+}
+
+.hero-content {
+    max-width: 850px;
+    animation: appear 1.5s ease;
+}
+
+.symbol {
+    color: var(--gold);
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(35px, 8vw, 76px);
+    color: var(--lightgold);
+    letter-spacing: 5px;
+}
+
+.hero h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: clamp(17px, 4vw, 28px);
+    margin: 22px 0;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 13px 32px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: var(--gold);
+    color: black;
+}
+
+/* GENERAL SECTION */
+
+section {
+    padding: 95px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.section-title p {
+    color: var(--gray);
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.line {
+    width: 65px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px auto;
+}
+
+/* ABOUT */
+
+.about {
+    background: #101010;
+}
+
+.content {
+    max-width: 900px;
+    margin: auto;
+}
+
+.content p {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 2.2;
+    margin-bottom: 22px;
+    text-align: justify;
+}
+
+.gold {
+    color: var(--lightgold);
+}
+
+/* CARE CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 30px 23px;
+    background: linear-gradient(145deg,#181818,#101010);
+    border: 1px solid #49371d;
+    transition: .4s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px #d9a44115;
+}
+
+.card .number {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+}
+
+.card h3 {
+    color: var(--lightgold);
+    font-family: 'Cinzel', serif;
+    margin: 15px 0;
+    font-size: 17px;
+}
+
+.card p {
+    color: #aaa;
+    font-size: 12px;
+    line-height: 2;
+}
+
+/* FARM PHILOSOPHY */
+
+.philosophy {
+    background: #111;
+    text-align: center;
+}
+
+.philosophy .content p {
+    text-align: center;
+}
+
+/* OWNER */
+
+.owner {
+    text-align: center;
+    background: radial-gradient(circle,#21190e,#080808 70%);
+}
+
+.owner h2 {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+.owner .name {
+    color: var(--lightgold);
+    font-family: 'Cinzel', serif;
+    font-size: 25px;
+    margin-top: 25px;
+}
+
+.owner p {
+    color: #aaa;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 35px 15px;
+    text-align: center;
+    background: #050505;
+    border-top: 1px solid #49371d;
+}
+
+footer h3 {
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 3px;
+}
+
+footer p {
+    color: #777;
+    font-size: 11px;
+    margin-top: 12px;
+}
+
+/* ANIMATION */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:650px) {
+    header {
+        padding: 15px 4%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 10px;
+    }
+
+    .logo {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 75px 6%;
+    }
+
+    .content p {
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <div class="logo">SHOD OF FIREBIRD</div>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#care">CARE</a>
+        <a href="#owner">OWNER</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="symbol">✦</div>
+
+        <h1>WY NDEL VIOJAN</h1>
+
+        <h2>WELCOME TO SHOD OF FIREBIRD</h2>
+
+        <p>
+        A FARM BUILT WITH PASSION, DEDICATION,
+        PATIENCE AND RESPONSIBILITY.
+        <br>
+        Where proper animal care meets the spirit
+        of hard work and continuous learning.
+        </p>
+
+        <a href="#about" class="btn">DISCOVER OUR FARM</a>
+
+    </div>
+
+</div>
+
+<!-- ABOUT OUR FARM -->
+
+<section class="about" id="about">
+
+    <div class="section-title">
+        <h2>ABOUT OUR FARM</h2>
+        <div class="line"></div>
+        <p>Our Story • Our Passion • Our Commitment</p>
+    </div>
+
+    <div class="content">
+
+        <p>
+        Welcome to <span class="gold">Shod of Firebird</span>,
+        a farm that represents dedication, patience,
+        responsibility, and the passion for raising
+        healthy and well-maintained roosters.
+        </p>
+
+        <p>
+        Our farm is more than a place where animals
+        are raised. It is a place where knowledge,
+        experience, and responsibility come together.
+        We believe that successful farming begins with
+        proper management and genuine care for every
+        animal.
+        </p>
+
+        <p>
+        Raising a healthy rooster requires consistency.
+        It is not only about providing food and water.
+        It also involves maintaining a clean environment,
+        providing comfortable shelter, monitoring health,
+        and understanding the different needs of animals
+        as they grow.
+        </p>
+
+        <p>
+        Every day is an opportunity to improve our
+        farming practices. From preparing balanced
+        nutrition to cleaning the surroundings and
+        observing animal behavior, every responsibility
+        plays an important role in maintaining a healthy
+        farm.
+        </p>
+
+        <p>
+        At Shod of Firebird, we believe that patience
+        is one of the most important qualities in farming.
+        Growth takes time, and good results come from
+        consistent effort. We focus on responsible
+        animal husbandry rather than shortcuts.
+        </p>
+
+        <p>
+        Our dream is to develop a farm recognized
+        for responsible care, proper management,
+        quality, and dedication. We want every
+        experience to become a lesson and every
+        challenge to become an opportunity to improve.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ROOSTER CARE -->
+
+<section id="care">
+
+    <div class="section-title">
+        <h2>THE ART OF PROPER CARE</h2>
+        <div class="line"></div>
+        <p>Building healthy growth through responsible management</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="number">01</div>
+            <h3>Proper Nutrition</h3>
+            <p>
+            Balanced poultry feed provides important
+            nutrients for healthy development.
+            Choose feed suitable for the animal's age
+            and nutritional requirements.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">02</div>
+            <h3>Fresh Water</h3>
+            <p>
+            Clean drinking water should always be
+            available. Regularly wash drinking
+            containers and prevent contamination.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">03</div>
+            <h3>Clean Environment</h3>
+            <p>
+            Keep the shelter dry, clean, and
+            well-ventilated. Proper sanitation helps
+            reduce the risk of diseases.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">04</div>
+            <h3>Health Monitoring</h3>
+            <p>
+            Observe appetite, activity, breathing,
+            and behavior. Seek veterinary advice
+            when an animal shows signs of illness.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">05</div>
+            <h3>Daily Management</h3>
+            <p>
+            Consistent daily attention helps ensure
+            that animals receive proper food, water,
+            shelter, and comfortable living conditions.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">06</div>
+            <h3>Preventive Care</h3>
+            <p>
+            Follow suitable vaccination and parasite
+            prevention programs with guidance from
+            a qualified poultry veterinarian.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GROWTH -->
+
+<section class="about">
+
+    <div class="section-title">
+        <h2>THE JOURNEY OF GROWTH</h2>
+        <div class="line"></div>
+        <p>Patience is the foundation of progress</p>
+    </div>
+
+    <div class="content">
+
+        <p>
+        Every rooster has its own growth journey.
+        From its early development to adulthood,
+        proper nutrition, clean surroundings,
+        suitable housing, and regular health
+        monitoring are essential.
+        </p>
+
+        <p>
+        We believe that healthy growth cannot
+        be rushed. Animals need time, appropriate
+        care, and a suitable environment to develop.
+        Our responsibility is to provide these
+        important needs every single day.
+        </p>
+
+        <p>
+        We also believe that success is not simply
+        measured by winning or competition.
+        True achievement comes from responsible
+        farming, healthy animals, valuable experience,
+        and the ability to continuously improve.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- FARM PHILOSOPHY -->
+
+<section class="philosophy">
+
+    <div class="section-title">
+        <h2>OUR FARM PHILOSOPHY</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="content">
+
+        <p>
+        "A great farm is not built overnight.
+        It is developed through patience,
+        discipline, knowledge, and dedication."
+        </p>
+
+        <p>
+        At Shod of Firebird, we believe that
+        every small responsibility matters.
+        Good nutrition, clean water, proper shelter,
+        and attention to animal health create
+        the foundation of responsible farming.
+        </p>
+
+        <p>
+        We are committed to learning, improving,
+        and maintaining high standards of animal care.
+        Our pride comes from the effort we give
+        and the responsibility we carry.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- OWNER -->
+
+<section class="owner" id="owner">
+
+    <div class="symbol">✦</div>
+
+    <h2>THE FOUNDER & OWNER</h2>
+
+    <div class="line"></div>
+
+    <div class="name">WY NDEL VIOJAN</div>
+
+    <p>Founder and Owner of Shod of Firebird</p>
+
+    <p>
+    Passion | Dedication | Discipline | Responsibility
+    </p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>SHOD OF FIREBIRD</h3>
+
+    <p>Owned and Managed by Wyndel Viojan</p>
+
+    <p>© 2026 SHOD OF FIREBIRD</p>
+
+    <p>ALL RIGHTS RESERVED.</p>
+
+</footer>
+
+</body>
+</html>
